@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+/* 1)
+let john = { name: "John", age:25};
+let adam = { name: "Adam", age:30};
+let mary = { name:"Mary", age: 28};
+let users = [john, adam, mary];
+function sortByName(arr){
+    return arr.sort(function(a,b){
+     if (a.name > b.name) return 1;
+     if (a.name == b.name) return 0;
+     if (a.name < b.name) return -1;
+    })
+};
+sortByName(users);
+alert(users[1].name);
+*/
+
+/* 2) without set
+function unique(arr){
+    return arr.filter(function(item,index){
+        return arr.indexOf(item)=== index;
+    })
+};
+let values = ["John", "Harry", "Mary", "Harry", "Beth", "Harry","Mary","John"];
+alert(unique(values));
+*/
+/* 2) with set
+function unique(arr){
+    return [...new Set(arr)];
+};
+let values = ["John", "Harry", "Mary", "Harry", "Beth", "Harry","Mary","John"];
+alert(unique(values));
+*/
+
+/* 3)
+let john = { name: "John", surname: "Smith", id: 1};
+let pete = { name: "Pete", surname: "Hunt", id: 2};
+let mary = { name: "Mary", surname: "Key", id: 3};
+let users = [john, pete, mary];,b 
+let usersMapped = users.map(function(user){
+    return {
+        fullName: user.name + " " + user.surname,
+        id: user.id
+    };
+});
+alert(usersMapped[0].id);
+alert(usersMapped[0].fullName);
+*/
+
+/* 4)
+function countWords(sentence){
+    let wordsArray = sentence.split(/\s+/);
+    let wordsMap = new Map();
+    for (let i = 0; i < wordsArray.length; i++){
+        let word = wordsArray[i];
+        if (wordsMap.has(word)){
+            wordsMap.set(word,wordsMap.get(word)+ 1);
+        }else{
+            wordsMap.set(word,1);
+        }
+        if (word=== ',' || word === '.'){
+            wordsMap.delete(word);
+        }
+    }
+    return wordsMap;
+};
+let sentence = "John the second is the son of John the first , while the second son of John the second is William the second .";
+let wordFrequencies = countWords(sentence);
+console.log(wordFrequencies);
+*/
+
+
+/* 5) 
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+function aclean(arr){
+    let uniqueWordsMap = new Map();
+    arr.map((word) => {
+        let sortedWord = word.split('').sort().join('').toLowerCase();
+        if (!uniqueWordsMap.has(sortedWord)) {
+            uniqueWordsMap.set(sortedWord, word);
+        }
+    });
+    let filteredArray = Array.from(uniqueWordsMap.values());
+    return filteredArray;
+};
+let filteredArray = (aclean(arr));
+console.log(filteredArray);
+*/
+
+
+
+
+
+</script>
+</body>
+</html>
